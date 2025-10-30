@@ -1,0 +1,72 @@
+.post-course-wrapper{
+    height: 80vh;
+    width: 100%;
+    padding-top: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post-course-wrapper > div{
+    width: 80%;
+    height: 70vh;
+}
+.Coursename{
+    width: 40%;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: 1px solid orange;
+    background-color: transparent;
+    margin:1vh 1vh;
+    display: block;
+}
+.Coursename:focus{
+    outline: none;
+    box-shadow: 0px 0px 10px 5px rgba(255, 166, 0, 0.315);
+}
+.CourseDescription{
+    display: block;
+    background-color: rgba(255, 255, 255, 0.247);
+    border: 1px solid orange;
+    font-family: 'Raleway', sans-serif;
+    width: 70%;
+    height: 40vh;
+    border-radius: 5px;
+    margin:1vh 1vh;
+    padding: 5px;
+}
+.CourseDescription:focus{
+    outline: none;
+}
+form div{
+    display: flex;
+    width: 70%;
+    background-color: rgb(255, 228, 178);
+    justify-content: space-around;
+    margin-top: 2vh;
+    height: 8vh;
+    align-items: center;
+}
+form div a{
+    color: black;
+    border: 1px solid orange;
+    border-radius: 3px;
+    background-color: orange;
+    padding: 3px;
+    text-decoration: none;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form div a:hover, form div input:hover{
+    background-color: rgba(255, 166, 0, 0.171);
+    cursor: pointer;
+}
+form div input{
+    width: 10%;
+    height: 5vh;
+    border: 1px solid orange;
+    border-radius: 3px;
+    background-color: orange;  
+    font-size: 17px;
+}

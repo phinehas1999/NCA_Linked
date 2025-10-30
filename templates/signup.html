@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Londrina+Outline&family=Open+Sans:wght@500&family=Raleway&family=Roboto+Condensed&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    <section>
+      <form action="" method="post">
+        {% csrf_token %}
+        <div>
+          <p class="titles">username:</p>
+          {{ form.username }} {% if form.username.errors %}
+          <div class="error">
+            {% for error in form.username.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <p class="titles">email:</p>
+          {{ form.email }} {% if form.email.errors %}
+          <div class="error">
+            {% for error in form.email.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <p class="titles">password:</p>
+          {{ form.password1 }} {% if form.password1.errors %}
+          <div class="error">
+            {% for error in form.password1.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <p class="titles">confirm password:</p>
+          {{ form.password2 }} {% if form.password2.errors %}
+          <div class="error">
+            {% for error in form.password2.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- non-field errors (like "passwords do not match") -->
+        {% if form.non_field_errors %}
+        <div class="error">
+          {% for error in form.non_field_errors %}
+          <p>{{ error }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <input type="submit" class="submit-input-btn" value="Register" />
+        <a href="{% url 'login' %}" class="signupbtndiv"
+          >Already Signed Up?, Login</a
+        >
+      </form>
+    </section>
+  </body>
+</html>

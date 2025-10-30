@@ -1,0 +1,31 @@
+.learn-more-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 15vh;
+    min-height: 140vh;
+}
+.learnmore-div{
+    width: 80%;
+    min-height: 85vh;
+    box-shadow: 0px 0px 10px 5px rgba(128, 128, 128, 0.233);
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+.learnmore-div > h1{
+    font-size: 25px;
+    color: orange;
+}
+.learnmore-card{
+    width: 90%;
+    padding-top: 5vh;
+}
+.learnmore-card > h1{
+    color: orange;
+}

@@ -1,0 +1,116 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Londrina+Outline&family=Open+Sans:wght@500&family=Raleway&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <title>{{course.Course_name}}</title>
+    <link rel="stylesheet" href="{% static 'css/videopage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <section class="main-wrapper-sec">
+        <div class="main-wrapper-sec-inside">
+            <div class="video-sec">
+                <div class="video-player-div">
+                    <p style="padding-left: 1%; 
+                    padding: 10px 10px;
+                    font-weight: bold;
+                    font-size: 15px;
+                    "> Course : {{course.Course_name}}
+                    <small style="font-weight: 100; font-size: 12px;"> &rarr; in {{course.Category.Category_name}}</small></p>
+                    
+                    {% if course.video %}
+                        <video controls>
+                            <source src="{{ course.video.url }}" type="video/mp4" />
+                        </video>
+                    {% endif %}
+                
+                </div>
+                <div class="video-parts-div">
+                    <div class="video-parts-div-nav">
+                        <p>PARTS</p>
+                    </div>
+                    <div class="video-parts-div-content">
+                        <div class="video-part-card">
+                            <a href="">&#9654; part 2 </a>
+                        </div>
+                        <div class="video-part-card">
+                            <a href="">&#9654; part 3 </a>
+                        </div>
+                        <div class="video-part-card">
+                            <a href="">&#9654; part 4 </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="video-comment-sec">
+                <div class="video-comment-div">
+                    <div class="channel-info-div">
+                        <p> <span style="color: gray; font-size: 14px;">HOSTED BY:</span> {{course.host}} </p>
+                        
+                        {% if request.user.is_authenticated %}
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <input name="JOIN" type="submit" value="JOIN" />
+                            <input name="LEAVE" type="submit" value="LEAVE" />
+                        </form>
+                        {% endif %}
+
+                    </div>
+                    <div class="comment-sec-nav">
+                        <p>COMMENTS</p>
+                    </div>
+                    <div class="comment-wrapper">
+                        <div class="comment-in-wrapper">
+                        {% for message in messages %}
+                            <div class="message-holder-div">                                    
+                                <small>@{{message.user}} {{message.created|timesince}} ago</small> 
+                                <p style="font-size: 1rem;">{{message.body}}</p>
+                                {% if request.user == message.user %}
+                                <small><a class="delete-message" href="{% url 'deleteMessage' message.id %}">delete</a></small>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        </div>
+                        {% if request.user.is_authenticated %}
+                            <div class="message-box">
+                                <form action="{% url 'comment' course.id%}" method="POST">
+                                    {% csrf_token %}
+                                    <input class="message-input" name="body" type="text" id="body" placeholder="Type here and press enter to send....">
+                                </form>
+                            </div>
+                            {% else%}
+                            <div class="message-box">
+                                Login to comment
+                            </div>
+
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="video-info-div">
+                    <div class="info-sec-nav">
+                        <h3>COURSE INFO</h3>
+                    </div>
+                    <div>
+                        <p>
+                            {{course.CourseDescription }}
+                            
+                        </p>
+                        {% if request.user == course.host %}
+                        <a class="E-and-D" href="{% url 'editpage' course.id %}">Edit Course</a>
+                        <a class="E-and-D" href="{% url 'deletepage' course.id %}">Delete Course</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

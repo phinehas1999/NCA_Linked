@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">  
+    <link rel="stylesheet" href="{% static 'css/createpage.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Londrina+Outline&family=Open+Sans:wght@500&family=Raleway&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <title>Create</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <section class="create-wrapper">
+        <section class="create-in-wrapper">
+            <div class="create-div">
+                <div class="create-div-img">
+                    <img src="{% static 'images/folder-upload-svgrepo-com.svg'%}">
+                </div>
+                <div class="create-div-content">
+                    <a href="{% url 'postcourse' %}"> Upload a Course </a>
+                </div>
+            </div>
+
+            <div class="create-div">
+                <div class="create-div-img">
+                    <img src="{% static 'images/event-svgrepo-com (1).svg'%}">
+                </div>
+                <div class="create-div-content">
+                    <a href="{% url 'postevent' %}"> Post Event </a>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+</html>

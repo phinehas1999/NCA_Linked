@@ -1,0 +1,247 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <title>NCAlinked</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Londrina+Outline&family=Open+Sans:wght@500&family=Raleway&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <style>
+    </style>
+</head>
+<body> 
+    {% include 'navbar.html' %}
+    <section id="sidebar" class="sidebar">
+        <details>
+            <summary>CATEGORIES</summary>
+            <div>
+                <a href="">Maths</a>
+            </div>
+            <div>
+                <a href="">Biology</a>   
+            </div>
+            <div>
+                <a href="">Physics</a>
+            </div>
+            <div>
+                <a href="">Chemistry</a>
+            </div>
+            <div>
+                <a href="">Amharic</a>
+            </div>
+            <div>
+                <a href="">English</p>
+            </div>
+            <div>
+                <a href="">ICT</a>
+            </div>
+            <div>
+                <a href="">General Knowledege</a>  
+            </div>
+            <div>
+                <a href="">SAT Test Prep</a>
+            </div>                
+        </details>
+        <div>
+            <a href="">EVENTS</a>
+        </div>
+        <div>
+            <a href="">JOINED COURSES</a>
+        </div>
+        <div>
+            <a href="">LOGIN</a>
+        </div>
+        <div>
+            <a href="">CREATE</a>
+        </div>
+        <script>
+            let hamburgermenu = document.getElementById("hamburgermenu")
+            let sidebar = document.getElementById('sidebar')
+            let click = false
+            let x = window.matchMedia("(min-width: 100px)")
+            
+            hamburgermenu.addEventListener('click',function(){
+                if(click == false){
+                    click = true
+                    sidebar.style.marginLeft = '0%'
+                }
+                else if(x.matches){
+                    click = false
+                    sidebar.style.marginLeft = '-81%'
+                }
+            })
+        </script>
+    </section>
+    <section class="body-wrapper">
+        <section class="featured-sec-wrapper">
+            <section class="featured-sec">
+                <div class="featured-sec-nav">
+                    <p>
+                    COURSES 
+                    {% if user.is_authenticated %}
+                        <span style="
+                        color:gray;
+                        font-size: 14px;
+                        padding-left: 5px;
+                        "> LOGGED IN AS: @{{user.username}}</span>
+                    {% endif %}
+                    </p>
+                </div>
+                <div class="featured-sec-body">
+                    {% for course in courses %}
+                    <div class="featured-sec-cards">
+                        <div class="card-img-div">
+                            {% if course.Category.Category_name == 'Maths' %}
+                                <img src="{% static 'images/geometry-svgrepo-com.svg' %}">                                      
+                            {% endif %}
+                            {% if course.Category.Category_name == 'Physics' %}
+                                <img src="{% static 'images/physics-formula-svgrepo-com.svg' %}">                                      
+                            {% endif %}
+                            {% if course.Category.Category_name == 'ICT' %}
+                                <img src="{% static 'images/tech-color-desktop-svgrepo-com.svg' %}">                                      
+                            {% endif %}
+                            {% if course.Category.Category_name == 'Geography' %}
+                                <img src="{% static 'images/world-map-svgrepo-com.svg' %}">                                      
+                            {% endif %}
+                            {% if course.Category.Category_name == 'English' %}
+                                <img src="{% static 'images/knowledge-book-education-learning-books-svgrepo-com.svg' %}">                                      
+                            {% endif %}
+                            {% if course.Category.Category_name == 'Chemistry' %}
+                                <img src="{% static 'images/chemistry-6-svgrepo-com.svg' %}">                                      
+                            {% endif %}
+                            {% if course.Category.Category_name == 'Biology' %}
+                                <img src="{% static 'images/biology-svgrepo-com.svg' %}">                                      
+                            {% endif %}
+                            
+                        </div>
+                        <div class="card-info">
+                            <div class="card-course-div">
+                                <a href="{% url 'videopage' course.id %}">{{course.Category}}</a>
+                            </div>
+                            <p> 
+                                {{course.Course_name}}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>    
+            </section>
+        </section>
+        
+
+        <section class="welcome-sec-wrapper">
+            <section  class="welcome-sec">
+                <div class="welcome-sec-left">
+                    <div class="welcome-sec-left-top">
+                        <h1>EXCEL YOUR KNOWLEDGE</h1>
+                        <p>
+                            Advance your Knowledege through modern, to date,
+                            best-in-class courses tailored according to your needs.
+                        </p>
+                    </div>
+                    <div  class="welcome-sec-left-bottom">
+                        <a href="{% url 'signup' %}">
+                            REGISTER
+                        </a>
+                    </div>
+                </div>
+                <div class="welcome-sec-right">
+                    <img style=" 
+                        height: 85vh;
+                        margin-top: 10vh;
+                        object-fit: cover;
+                        border-radius: 20px;
+                        width: 100%;" 
+                        src="{% static 'images/excel.png' %}">
+                </div>
+            </section>
+        </section>
+        
+        <section class="welcome-sec-wrapper" style="margin-top: 10vh;">
+            <section  class="welcome-sec" >
+                <div class="welcome-sec-left">
+                    <div class="welcome-sec-left-top">
+                        <h1>OUR GOAL</h1>
+                        <p>
+                            Meet the learning style or needs of students, 
+                            Improve user-accessibility and time flexibility to 
+                            engage learners in the learning process                           
+                        </p>
+                    </div>
+                    <div  class="welcome-sec-left-bottom">
+                        <a href="{% url 'learnmore' %}">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="welcome-sec-right">
+                    <img style="object-fit: cover;" src="{% static 'images/goal.png' %}">
+                </div>
+            </section>
+        </section>        
+        
+        <script defer>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    console.log('entry')
+                    if(entry.isIntersecting){
+                        entry.target.classList.add('show');
+                    } 
+                    // if you want to show it again
+                    // else{
+                    //     entry.target.classList.remove('show');
+                    // }
+                });
+            });
+            const hiddenElements = document.querySelectorAll('.welcome-sec');
+            hiddenElements.forEach((el) => observer.observe(el));
+        </script>
+
+
+
+        <footer class="footer">
+            <div class="footer-wrapper">
+                <div class="footer-cards">
+                    <h1>Quick Links</h1>
+                    <div>
+                        <a href="{% url 'events'%}">EVENTS</a>
+                        <a href="{% url 'learnmore' %}">ABOUT US</a>
+                        <a href="{% url 'joinedcourses' %}">JOINED</a>
+                    </div>
+                </div>
+                <div class="footer-cards">
+                    <h1>Contacts</h1>
+                    <div>
+                        <a style="
+                            display:flex;
+                            align-items: center;
+                            justify-content: space-around;
+                            pointer-events: none;
+                            ">
+                            <img style="
+                                width: 30px; 
+                                background-color: orange; 
+                                border-radius: 100px;
+                                margin-right:5px;" 
+                                src="{% static 'images/icons8-telegram-50.png'%}">
+                            @PhinehasAbdu
+                            OR
+                            @AbduFantaw
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-footer">
+                <p>
+                    NCAlinked &copy;2023
+                </p>
+            </div>
+        </footer>
+    </section>
+</body>
+</html>

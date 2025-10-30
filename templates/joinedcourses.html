@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Londrina+Outline&family=Open+Sans:wght@500&family=Raleway&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <title>Joined Courses</title>
+    <link rel="stylesheet" href="{% static 'css/joinedcourses.css' %}">
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+</head>
+<body>
+    {% include 'navbar.html'%}]
+
+    <section class="body-wrapper">
+        <section class="featured-sec-wrapper">
+            <section class="featured-sec">
+                <div class="featured-sec-nav">
+                    <p>
+                   JOINED COURSES 
+                    </p>
+                </div>
+                <div class="featured-sec-body">
+                {% for course in courses %}
+                    <div class="featured-sec-cards">
+                        <div class="card-img-div">
+                            {% if course.Category.Category_name == 'Maths' %}
+                                <img src="{% static 'images/geometry-svgrepo-com.svg' %}">                                      
+                            {% endif %}
+                            {% if course.Category.Category_name == 'Physics' %}
+                                <img src="{% static 'images/physics-formula-svgrepo-com.svg' %}">                                      
+                            {% endif %}
+                            {% if course.Category.Category_name == 'ICT' %}
+                                <img src="{% static 'images/tech-color-desktop-svgrepo-com.svg' %}">                                      
+                            {% endif %}
+                            {% if course.Category.Category_name == 'Geography' %}
+                                <img src="{% static 'images/world-map-svgrepo-com.svg' %}">                                      
+                            {% endif %}
+                            {% if course.Category.Category_name == 'English' %}
+                                <img src="{% static 'images/knowledge-book-education-learning-books-svgrepo-com.svg' %}">                                      
+                            {% endif %}
+                            {% if course.Category.Category_name == 'Chemistry' %}
+                                <img src="{% static 'images/chemistry-6-svgrepo-com.svg' %}">                                      
+                            {% endif %}
+                            {% if course.Category.Category_name == 'Biology' %}
+                                <img src="{% static 'images/biology-svgrepo-com.svg' %}">                                      
+                            {% endif %}
+                            
+                        </div>
+                        <div class="card-info">
+                            <div class="card-course-div">
+                                <a href="{% url 'videopage' course.id %}">{{course.Category}}</a>
+                            </div>
+                            <p> 
+                                {{course.Course_name}}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>    
+            </section>
+        </section>
+
+</body>
+</html>

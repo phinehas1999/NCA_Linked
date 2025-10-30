@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <style>
+        .wrapper{
+            position: fixed;
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 80vh;
+        }
+        .holder{
+            border: 2px solid rgb(248, 92, 92);
+            padding: 40px 20px 40px 20px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .holder:hover{
+            box-shadow: 1px 1px 18px 5px rgb(255, 127, 127);
+        }
+        .buttons-holder{
+            width: 100%;
+            height: 6vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .back-btn{
+            background-color: orange;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+            padding: 5px;
+            transition: 0.2s;
+            font-size: 14px;
+            border: 1px solid orange;
+        }
+        .back-btn:hover{
+            background-color: white;
+            color: orange;
+            border: 1px solid orange;
+        }
+        .delete-btn{
+            background-color: #ff403a;
+            color: white;
+            border-radius: 5px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            transition: 0.2s;
+            border: 1px solid #ff403a;
+            cursor: pointer;
+        }
+        .delete-btn:hover{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="wrapper">
+        <div class="holder">
+            <form action="" method="POST">
+                {% csrf_token %}
+    
+                <p>Are you sure you want to delete this ? </p>
+                <div class="buttons-holder">
+                    <a class="back-btn" href="{% url 'homepage' %}"> Go Back </a>
+                    <input class="delete-btn" type="submit" value="Delete">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

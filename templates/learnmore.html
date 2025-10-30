@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More</title>
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/learnmore.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Londrina+Outline&family=Open+Sans:wght@500&family=Raleway&family=Roboto+Condensed&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <section class="learn-more-wrapper">
+        <section class="learnmore-div">
+            <h1>ABOUT US</h1>
+            <div class="learnmore-card">
+                <h1>What is NCAlinked ?</h1>
+                <div>
+                    NCALINKED is a virtual learning platform for NCA 
+                    students which allows student to take online courses 
+                    and deeply understand what they learned in school.
+                    Students who find their focus suffering from classroom 
+                    activity may benefit from online classes and, Students 
+                    who aren’t as assertive may have better opportunities to 
+                    participate in class discussions.
+                </div>
+            </div>
+            <div class="learnmore-card">
+                <h1>What are the features ?</h1>
+                <div>
+                    NCALINKED IS VERY USER FRIENDLY.
+                    It is very easy to setup. (it takes less than 1 minute 
+                    to setup and start learning).Filtering courses by searching their name or choosing a category.
+                    The courses are given by videos and each video have a link that allows 
+                    user to refer to the pdf file that the teacher is teaching in.
+                    It is free! Any students can take the course for free, which increases their 
+                    knowledge and confidence. It doesn’t only have to be courses taken in school.
+                    You can take courses about programming, general knowledge and many others.	
+                </div>
+            </div>
+            <div class="learnmore-card">
+                <h1>OUR GOALS</h1>
+                <div>
+                    Creating a smart NCA students community .
+                    The students won’t be confused when learning a new topic 
+                    because they have a concept of what they will be learning 
+                    in the next class. It makes teaching easier for teachers 
+                    in NCA because the students have an idea of what they are learning.
+                    Increases class participation and class discussion.	
+                </div>
+            </div>
+            <div class="learnmore-card">
+                <h1>What is the platform made by if you are wondering?</h1>
+                <div>
+                    This platform is coded by Phinehas Abdu 
+                    (a self-taught full stack web developer) by using HTML ,CSS and  
+                    JavaScript for the Frontend.<wbr> Python, Django (a popular python framework like Flask) 
+                    for the Backend.	
+                </div>
+            </div>
+            <br>
+        </section>
+    </section>
+</body>
+</html>

@@ -1,0 +1,83 @@
+section{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 12vh;
+    flex-direction: column;
+}
+section > h1{
+    font-size: 16px;
+    color: darkgray;
+}
+.main-chat-wrapper{
+    height: 80vh;
+    width: 90%;
+    box-shadow: 0px 0px 10px 5px rgba(128, 128, 128, 0.274);
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.384);
+    border-radius: 10px;
+}
+.message-box{
+    position: absolute;
+    bottom: 0%;
+    width: 99.6%;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+    background-color: rgba(0, 0, 0, 0.151);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.message-box form, .message-box input{
+    width: 95%;
+    height: 6vh;
+}
+.message-box input{
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+}
+.message-box input:focus{
+    outline: none;
+    border-bottom: 3px solid orange;
+}
+
+
+.delete-message{
+    text-decoration: none;
+    padding: 1px 5px 1px 5px;
+    color: white;
+    border-radius: 10px;
+    transition: 0.2s;
+    background-color: rgb(255, 86, 86);
+    opacity: 0;
+}
+.message-holder-div:hover .delete-message{
+    opacity: 1;
+}
+
+.message-holder-div{
+    margin-left: 2%;
+    border-left: 3px solid rgb(255, 77, 0);
+    margin-top: 15px;
+    padding-left: 2%;
+    width: 93%;
+    overflow: -moz-hidden-unscrollable;
+    margin-bottom: 2%;
+}
+
+.placeholder{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.placeholder > p{
+    font-size: 20px;
+    color: gray;
+}

@@ -1,0 +1,73 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100%;
+    padding-top: 15vh;
+}
+section > form{
+    width: 30%;
+    height: 70vh;
+    box-shadow: 0px 0px 10px 5px rgba(128, 128, 128, 0.26);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+form > div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 30%;
+}
+.inputs{
+    width: 70%;
+    height: 5vh;
+    border-radius: 100px;
+    padding-left: 5px;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    border: 1px solid orange;
+    background-color: transparent;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    transition: 0.2s;
+}
+.inputs:focus{
+    outline: none;
+    box-shadow: 0px 0px 10px 5px rgba(128, 128, 128, 0.13);
+    background-color: rgba(255, 255, 255, 0.575);
+}
+.submit-input-btn {
+    margin-top: 0.3vh;
+    width: 50%;
+    height: 6vh;
+    background-color: orange;
+    font-family: 'Raleway', sans-serif;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+.submit-input-btn:hover{
+    transform: translateY(-5px);
+    background-color: rgba(255, 166, 0, 0.212);
+    border: 1px solid orange;
+}
+
+.signupbtndiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    color: gray;
+    text-decoration: none;
+}
+.signupbtndiv:hover{
+    color: orange;
+    text-decoration: underline;
+}

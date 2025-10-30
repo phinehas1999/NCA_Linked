@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Ask.css' %}">
+    <title>Ask</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <section>
+        <h1>Ask any questions</h1>
+        <div class="main-chat-wrapper">
+            <div style="overflow-y: scroll; height: 72vh; width: 100%;">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="message-holder-div">                                    
+                            <small>@{{message.user}} {{message.created|timesince}} ago</small> 
+                            <p style="font-size: 1rem;">{{message.body}}</p>
+                            {% if request.user == message.user %}
+                            <small><a class="delete-message" href="{% url 'deleteChat' message.id%}">delete</a></small>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="placeholder">
+                        <p>No questions yet</p>
+                    </div>
+                {% endif %} 
+            </div>
+            
+            {% if request.user.is_authenticated %}
+            <div class="message-box">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <input class="message-input" name="body" type="text" id="body" placeholder="Type here and press enter to send....">
+                </form>
+            </div>
+            {% else%}
+            <div class="message-box">
+                Login to comment
+            </div>
+
+            {% endif %}
+        </div>
+    </section>
+</body>
+</html>

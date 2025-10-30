@@ -1,0 +1,65 @@
+.body-wrapper{
+    display: flex;
+    align-items: center;
+    height: 90vh;
+    padding-left: 10%;
+    width: 90%;
+}
+.body-wrapper form{
+    width: 70%;
+}
+.body-wrapper form h1{
+    font-weight: bolder;
+    font-size: 20px;
+}
+.EventDescription{
+    height: 60vh;
+    width: 100%;
+    resize: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.247);
+    transition: 0.2s;
+}
+.EventDescription:focus{
+    outline: none;
+    box-shadow: 0px 0px 10px 5px rgba(128, 128, 128, 0.151);
+    border: none;
+    background-color: white;
+    margin-top: 10px;
+}
+.body-wrapper form div{
+    display: flex;
+    width: 100%;
+    background-color: rgb(255, 228, 178);
+    justify-content: space-around;
+    margin-top: 2vh;
+    height: 10vh;
+    align-items: center;
+}
+.body-wrapper form div a{
+    color: black;
+    border: 1px solid orange;
+    border-radius: 3px;
+    background-color: orange;
+    padding: 3px;
+    text-decoration: none;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.body-wrapper form div input{
+    width: 10%;
+    height: 5vh;
+    border: 1px solid orange;
+    border-radius: 3px;
+    background-color: orange;  
+    font-size: 17px;
+}
+
+.body-wrapper form div a:hover, .body-wrapper form div input:hover{
+    background-color: rgba(255, 166, 0, 0.171);
+    cursor: pointer;
+}

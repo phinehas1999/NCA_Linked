@@ -1,0 +1,227 @@
+body{
+    font-family: 'Raleway', sans-serif;
+    height: 200vh;
+}
+.main-wrapper-sec{
+    width: 100%;
+    height: 120vh;  
+    padding-top: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-wrapper-sec-inside{
+    width: 95%;
+    height: 160vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 13px 2px rgba(128, 128, 128, 0.562);
+}
+.video-sec{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    padding-bottom: 5vh;
+    border-bottom: 1px solid gray;
+}
+.video-player-div{
+    width: 100%;
+    height: 80vh;
+}
+.video-player-div video{
+    height: 78.5vh;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+.video-parts-div{
+    width: 40%;
+    display: none;
+}
+.video-parts-div-nav{
+    height: 8vh;
+    width: 95%;
+    border-bottom: 1px solid gray;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+}
+.video-parts-div-nav p{
+    color: gray;
+}
+.video-parts-div-content{
+    height: 75vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.video-part-card{
+    width: 90%;
+    margin: 10px 5px 5px 5px;
+    height: 12vh;
+    background-color: rgb(255, 119, 0);
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.video-part-card a{
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    padding-left: 20px;
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.2s;
+    border-radius: 20px;
+}
+.video-part-card a:hover{
+    background-color: rgba(0, 0, 0, 0.144);
+}
+.video-comment-sec{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+}
+.video-comment-div{
+    height: 70vh;
+    width: 67%;
+    border-right: 1px solid gray;
+}
+.channel-info-div{
+    width: 100%;
+    height: 12vh;
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.channel-info-div form{
+    display: flex;
+    justify-content: space-between;
+    width: 14%;
+}
+.channel-info-div form input{
+    color: black;
+    border-radius: 5px;
+    width: 45%;
+    height: 8vh;
+    background-color: orange;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+.channel-info-div a:hover{
+    background-color: rgba(255, 119, 0, 0.788);
+}
+.comment-sec-nav{
+    display: flex;
+    align-items: center;
+    height: 5vh;
+    padding-left: 10px;
+}
+.comment-sec-nav p{
+    color: gray;
+}
+.comment-wrapper{
+    margin-top: 2%;
+    margin-left: 5%;
+    width: 90%;
+    height: 50vh;
+    border-radius: 20px;
+    background-color: rgba(255, 166, 0, 0.158);
+    position: relative;
+}
+.comment-in-wrapper{
+    overflow-y: scroll;
+    height: 43.8vh;
+}
+.message-box{
+    position: absolute;
+    bottom: 0%;
+    width: 99.5%;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+    background-color: rgba(0, 0, 0, 0.068);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.message-box form, .message-box input{
+    width: 95%;
+    height: 4vh;
+}
+.message-box input{
+    border: none;
+    background-color: transparent;
+}
+.message-box input:focus{
+    outline: none;
+    border-bottom: 1px solid orange;
+}
+
+
+.delete-message{
+    text-decoration: none;
+    padding: 1px 5px 1px 5px;
+    color: white;
+    border-radius: 10px;
+    transition: 0.2s;
+    background-color: rgb(255, 86, 86);
+    opacity: 0;
+}
+.message-holder-div:hover .delete-message{
+    opacity: 1;
+}
+
+.message-holder-div{
+    margin-left: 2%;
+    border-left: 3px solid rgb(255, 77, 0);
+    margin-top: 15px;
+    padding-left: 2%;
+    width: 93%;
+    overflow: -moz-hidden-unscrollable;
+    margin-bottom: 2%;
+}
+
+
+
+
+
+.video-info-div{
+    width: 32%;
+    height: 70vh;
+    overflow: hidden;
+}
+.video-info-div p{
+    padding: 10px;
+}
+.info-sec-nav{
+    height: 12vh;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    width: 100%;
+}
+
+.E-and-D{
+    display: block;
+    background-color: orange;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+.E-and-D:hover{
+    color: gray;
+}

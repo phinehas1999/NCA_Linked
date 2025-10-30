@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Londrina+Outline&family=Open+Sans:wght@500&family=Raleway&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="nav-wrapper">
+        <div class="nav-in-wrapper">
+            <div class="nav-in-wrapper-logo-searchbar">
+                <div id="hamburgermenu" class="hamburger">
+                    <img src="{% static 'images/hamburgermenu.png' %}">
+                </div>
+                <div class="logo-img-div">
+                   <a href="{% url 'homepage' %}"><img src="{% static 'images/LogoMakr-0SO5sy.png' %}"> </a> 
+                </div>
+                <div class="searchbar-div">
+                    <form  action="{% url 'homepage' %}" method="">
+                        <input placeholder="Search Courses" type="search" name="q" />
+                    </form>
+                </div>
+            </div>
+            <div class="nav-right-sec">
+                <div class="nav-list-div-cat">
+                   <a>CATEGORIES</a> 
+                   <p class="less-than-sign"> > </p>
+                </div>
+
+                
+                <div class="categories-div">
+                {% for category in categories %}
+                    <a href="{% url 'homepage' %}?q={{category.Category_name}}">{{category.Category_name}}</a>
+                    <!-- <a href="">Biology</a>   
+                    <a href="">Physics</a>
+                    <a href="">Chemistry</a>
+                    <a href="">Amharic</a>
+                    <a href="">English</p>
+                    <a href="">ICT</a>
+                    <a href="">General Knowledege</a>                  
+                    <a href="">SAT Test Prep</a> -->
+                {% endfor %}
+                </div>
+
+
+
+                <div class="nav-list-div">
+                   <a href="{% url 'events'%}">EVENTS</a>
+                </div>
+                <div class="nav-list-div">
+                    <a href="{% url 'joinedcourses' %}">JOINED</a>  
+                </div>
+                <div class="nav-list-div">
+                    <a href="{% url 'Ask' %}">QUESTION ?</a>  
+                </div>
+                <div class="nav-list-div" >
+                    <a href="{% url 'createpage' %}">CREATE</a>
+                </div>
+                <div class="nav-list-div" >
+                    {% if user.is_authenticated %}
+                       <a style="font-family: 'Raleway', sans-serif;" href="{% url 'logout' %}" class="login-btn"> Logout </a>
+                        {% else %}
+                        <a class="login-btn" href="{% url 'login' %}">LOG IN</a> 
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
