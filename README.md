@@ -1,3 +1,5 @@
+---
+
 ````markdown
 # 📚 Django E-Learning Platform
 
@@ -132,4 +134,11 @@ Developed by **Phinehas Abdu**
 If you like this project, consider starring ⭐ the repo!
 
 ```
+
+---
+
+✅ **How to fix your issue:**
+Just copy everything **between the outermost triple backticks above** and paste it into your `README.md` file — **do not include the backticks themselves.**
+
+Would you like me to add badges (like “Made with Django”, “MIT License”, etc.) to make it look even more professional for GitHub?
 ```
