@@ -50,7 +50,7 @@ This project aims to provide a lightweight, customizable starting point for anyo
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
+   git clone https://github.com/phinehas1999/NCA_Linked.git
    cd <repo-name>
    ```
 
