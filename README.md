@@ -51,7 +51,6 @@ This project aims to provide a lightweight, customizable starting point for anyo
 
    ```bash
    git clone https://github.com/phinehas1999/NCA_Linked.git
-   cd <repo-name>
    ```
 
 2. **Create a virtual environment**
