@@ -1,5 +1,3 @@
----
-
 ````markdown
 # 📚 Django E-Learning Platform
 
