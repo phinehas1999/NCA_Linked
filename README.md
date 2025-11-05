@@ -93,7 +93,6 @@ If you’d like to help improve this project:
 4. Push to your fork and create a pull request.
 
 ---
----
 
 ## 🧭 Routes Overview
 
@@ -120,7 +119,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 💡 Future Improvements (ideas)
 
-* Add video uploads and streaming integration.
 * Introduce course progress tracking.
 * Add REST API with Django REST Framework.
 * Improve frontend with React or TailwindCSS.
@@ -134,18 +132,4 @@ Developed by **Phinehas Abdu**
 If you like this project, consider starring ⭐ the repo!
 
 ```
-
----
-
-### 🔍 To make this *perfect*, please also give me:
-
-1. 🏷️ The **exact name** of your repo (e.g. `django-elearn`, `openlearn`, etc.)  
-2. 🎨 A short **one-line tagline** (e.g. “A simple open-source e-learning platform built with Django.”)  
-3. 🧩 Whether you want me to include **badges** (like “Made with Django”, “Open Source”, “MIT License”, etc.)  
-4. 🖼️ Whether you have **screenshots or demo URLs** (I can include image markdown or links).  
-5. ⚖️ The **license** (MIT, GPL, etc.).  
-
-Once you provide those, I’ll generate a **final polished README.md** ready for GitHub, with formatting, badges, and optionally a contributors section.  
-
-Would you like me to include badges and a “Screenshots” section too?
 ```
