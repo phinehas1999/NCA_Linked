@@ -24,43 +24,42 @@
                     </p>
                 </div>
                 <div class="featured-sec-body">
-                {% for course in courses %}
-                    <div class="featured-sec-cards">
-                        <div class="card-img-div">
-                            {% if course.Category.Category_name == 'Maths' %}
-                                <img src="{% static 'images/geometry-svgrepo-com.svg' %}">                                      
-                            {% endif %}
-                            {% if course.Category.Category_name == 'Physics' %}
-                                <img src="{% static 'images/physics-formula-svgrepo-com.svg' %}">                                      
-                            {% endif %}
-                            {% if course.Category.Category_name == 'ICT' %}
-                                <img src="{% static 'images/tech-color-desktop-svgrepo-com.svg' %}">                                      
-                            {% endif %}
-                            {% if course.Category.Category_name == 'Geography' %}
-                                <img src="{% static 'images/world-map-svgrepo-com.svg' %}">                                      
-                            {% endif %}
-                            {% if course.Category.Category_name == 'English' %}
-                                <img src="{% static 'images/knowledge-book-education-learning-books-svgrepo-com.svg' %}">                                      
-                            {% endif %}
-                            {% if course.Category.Category_name == 'Chemistry' %}
-                                <img src="{% static 'images/chemistry-6-svgrepo-com.svg' %}">                                      
-                            {% endif %}
-                            {% if course.Category.Category_name == 'Biology' %}
-                                <img src="{% static 'images/biology-svgrepo-com.svg' %}">                                      
-                            {% endif %}
-                            
-                        </div>
-                        <div class="card-info">
-                            <div class="card-course-div">
-                                <a href="{% url 'videopage' course.id %}">{{course.Category}}</a>
+                {% if courses %}
+                    {% for course in courses %}
+                        <div class="featured-sec-cards">
+                            <div class="card-img-div">
+                                {% if course.Category.Category_name == 'Maths' %}
+                                    <img src="{% static 'images/geometry-svgrepo-com.svg' %}">                                      
+                                {% elif course.Category.Category_name == 'Physics' %}
+                                    <img src="{% static 'images/physics-formula-svgrepo-com.svg' %}">                                      
+                                {% elif course.Category.Category_name == 'ICT' %}
+                                    <img src="{% static 'images/tech-color-desktop-svgrepo-com.svg' %}">                                      
+                                {% elif course.Category.Category_name == 'Geography' %}
+                                    <img src="{% static 'images/world-map-svgrepo-com.svg' %}">                                      
+                                {% elif course.Category.Category_name == 'English' %}
+                                    <img src="{% static 'images/knowledge-book-education-learning-books-svgrepo-com.svg' %}">                                      
+                                {% elif course.Category.Category_name == 'Chemistry' %}
+                                    <img src="{% static 'images/chemistry-6-svgrepo-com.svg' %}">                                      
+                                {% elif course.Category.Category_name == 'Biology' %}
+                                    <img src="{% static 'images/biology-svgrepo-com.svg' %}">                                      
+                                {% endif %}
                             </div>
-                            <p> 
-                                {{course.Course_name}}
-                            </p>
+                            <div class="card-info">
+                                <div class="card-course-div">
+                                    <a href="{% url 'videopage' course.id %}">{{course.Category}}</a>
+                                </div>
+                                <p>{{course.Course_name}}</p>
+                            </div>
                         </div>
-                    </div>
                     {% endfor %}
-                </div>    
+                {% else %}
+                    <div style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; font-size: 1.2rem; color: #555;">
+                        No joined courses
+                    </div>
+
+                {% endif %}
+            </div>
+
             </section>
         </section>
 

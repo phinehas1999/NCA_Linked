@@ -254,16 +254,3 @@ def Ask(request):
     context = {'categories':categories, 'messages':messages}
     return render(request, 'Ask.html', context)
 
-
-
-# def show_category(request, category_name):
-#   template = loader.get_template('category.html')
-#   context = {
-#     'category': category_name,
-#     # other variables
-#   }
-# #   return HttpResponse(template.render(context, request))
-
-# {% if category == 'maths' %}
-#   <img src="maths_image.jpg" alt="Maths image">
-# {% endif %}
